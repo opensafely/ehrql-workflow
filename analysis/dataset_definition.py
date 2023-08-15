@@ -1,5 +1,5 @@
 from ehrql import Dataset
-from ehrql.tables.beta.core import patients, medications
+from ehrql.tables.beta.core import patients
 
 dataset = Dataset()
 index_date = "2022-01-01"
