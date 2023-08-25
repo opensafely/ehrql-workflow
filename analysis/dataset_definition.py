@@ -1,9 +1,11 @@
 from ehrql import Dataset
 from ehrql.tables.beta.core import patients
 
+# Create dataset
 dataset = Dataset()
-index_date = "2022-01-01"
 
-dataset.age = patients.age_on(index_date)
+# Create date_of_birth variable from patients table
+dataset.date_of_birth = patients.date_of_birth
 
-dataset.define_population(dataset.age >= 18)
+# Define study population
+dataset.define_population(patients.date_of_birth.is_on_or_before("1999-12-31"))
